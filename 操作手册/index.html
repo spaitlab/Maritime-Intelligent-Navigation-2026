@@ -980,8 +980,9 @@
 <h4 id="_2">步骤四：重启具身智能仿真平台，切换为算法训练模式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;完成 IP 与端口设置并保存后，<strong>重启具身智能仿真平台</strong>使网络配置生效。重启完成后观察界面左上角：ROS2 IP 旁的两条连接状态横线应显示为<strong>一蓝一绿</strong>，右侧基础状态栏中"船舶模型"应显示<strong>通讯正常</strong>，说明与 Simulink 模型及 ROS2 控制器的连接均已建立成功。</p>
 <p><img alt="szwc" src="../image_file/szwc.png" /></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确认连接正常后，在平台右上角的【运行模式】中选择切换为<strong>【算法训练】</strong>模式。切换成功后，可根据需要按住 <code>Shift</code> 键在场景内点击以新增障碍物，按住 <code>Ctrl</code> 键点击可设置目标点位置。</p>
-<p><img alt="" src="../assets/algo.png" /></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确认连接正常后，在平台右上角的【运行模式】中选择切换为<strong>【算法训练】</strong>模式。切换成功后，按 <code>N</code> 键切换到俯视视角。点击右侧<strong>训练区域</strong>右边的<strong>加号</strong>，在弹窗内输入<strong>区域名称</strong>，再点击<strong>确认</strong>即可创建出test场景区域。在右侧<strong>训练区域</strong>下方可看到创建出的test场景，点击test场景，在右侧<strong>test</strong>一栏可以看到不同的设置方式，其中<strong>区域长度</strong>为训练场景正方形的边长，<strong>智能体、目标点和障碍物</strong>都有<strong>固定位置、随机位置</strong>两种模式，如果选择<strong>固定位置</strong>，可根据需要按住 <code>Shift</code> 键在场景内点击鼠标左键以新增障碍物，按住 <code>Ctrl</code> 键点击鼠标左键可设置目标点位置，按住 `ALT 键点击鼠标左键可设置智能体初始位置。如果选择<strong>随机位置</strong>，则在训练开始时会随机定义相应物体的位置。（提示：按住鼠标右键可以拖动画面移动）</p>
+<p><img alt="xl1" src="../image_file/xl1.png" /></p>
+<p><img alt="xl3" src="../image_file/xl3.png" /></p>
 <p><strong>提示：若连接横线显示异常（均为灰色或红色），请检查虚拟机是否正常运行、IP 填写是否正确，并重新保存网络配置后再次重启。</strong></p>
 <hr />
 <h4 id="config-main">步骤五：设置config参数，运行 main 函数<a class="headerlink" href="#config-main" title="Permanent link">&para;</a></h4>
@@ -996,9 +997,8 @@
 <hr />
 <h4 id="_3">步骤六：在具身智能仿真平台中点击【开始训练】<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当算法端检测到虚拟传感器数据已正常读入（通过 ROS 订阅服务收到数据），说明算法进程与仿真平台的通信链路已建立完成。此时回到具身智能仿真平台界面，点击【<strong>开始训练</strong>】按钮，即可正式启动强化学习训练流程。</p>
-<p><img alt="ksxl" src="../image_file/ksxl.png" /></p>
+<p><img alt="xl4" src="../image_file/xl4.png" /></p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;训练启动后，平台将根据预设的航线、障碍物布局和智能体参数，持续进行算法迭代与仿真推演。可在实时状态界面中观察无人船的姿态、速度、轨迹等运行状态信息。</p>
-<p><img alt="xlgc" src="../image_file/xlgc.png" /></p>
 <p><strong>提示：若点击【开始训练】后无响应，请检查算法端是否已成功运行且已检测到传感器数据输入，确保通信链路建立后再重新点击。</strong></p>
 
 
